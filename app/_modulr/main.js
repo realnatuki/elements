@@ -1,3 +1,5 @@
+import './styles/main.css';
+import './js/alan';
 const elvenShield = {
   latherStrips: 2,
   ironIngot: 1,
@@ -10,3 +12,5 @@ const newShild = {
 };
 console.log(elvenShield);
 console.log(newShild);
+
+$('h1').css('background', 'red');

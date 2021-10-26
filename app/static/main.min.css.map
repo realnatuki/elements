@@ -1,0 +1,1 @@
+{"version":3,"file":"main.min.css","mappings":";;;AAAA;EACE,kCAAkC;EAClC,YAAY;AACd","sources":["webpack://modulr.css/./app/_modulr/styles/main.css"],"sourcesContent":["body {\n  background-color: rgb(231, 134, 8);\n  color: white;\n}\n"],"names":[],"sourceRoot":""}

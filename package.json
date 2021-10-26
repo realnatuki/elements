@@ -5,12 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server.js",
-    "start": "webpack serve",
+    "server": "nodemon server.js --ext js,ejs --ignore public",
     "client": "webpack --watch",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "build": "NODE_ENV=production webpack",
-    "build-dev": "webpack"
+    "build": "NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -32,14 +30,18 @@
   "homepage": "https://github.com/realnatuki/modulr#readme",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jquery": "^3.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "babel-loader": "^8.2.3",
     "concurrently": "^6.3.0",
+    "connect-livereload": "^0.6.1",
     "css-loader": "^6.5.0",
+    "css-minimizer-webpack-plugin": "^3.1.1",
+    "livereload": "^0.9.3",
     "mini-css-extract-plugin": "^2.4.3",
     "postcss": "^8.3.11",
     "postcss-loader": "^6.2.0",
