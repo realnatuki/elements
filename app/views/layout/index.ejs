@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= siteName %> | <%= title %></title>
+    <%- include('./partials/styles') %>
+  </head>
+
+  <body>
+    <header></header>
+    <%- include(`../pages/${template}`) %> <%- include('./partials/scripts') %>
+  </body>
+</html>

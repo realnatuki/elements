@@ -4,7 +4,13 @@
   "description": "Modulr Css Simple Sass Framework For Building User Interfaces",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "start": "webpack serve",
+    "client": "webpack --watch",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "build": "NODE_ENV=production webpack",
+    "build-dev": "webpack"
   },
   "repository": {
     "type": "git",
@@ -27,5 +33,21 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.3",
+    "concurrently": "^6.3.0",
+    "css-loader": "^6.5.0",
+    "mini-css-extract-plugin": "^2.4.3",
+    "postcss": "^8.3.11",
+    "postcss-loader": "^6.2.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.43.3",
+    "sass-loader": "^12.2.0",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
   }
 }
