@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= siteName %> | <%= title %></title>
-    <%- include('./partials/styles') %>
-  </head>
-
-  <body>
-    <header></header>
-    <%- include(`../pages/${template}`) %> <%- include('./partials/scripts') %>
-  </body>
+<head>
+<title><%= siteName %> | <%= title %></title>
+<%- include('./partials/meta') %> 
+<%- include('./partials/styles') %>
+</head>
+<body>
+<header>This is A Header</header>
+<%- include(`../pages/${template}`) %> 
+<%- include('./partials/scripts') %>
+</body>
 </html>

@@ -1,3 +1,3 @@
 $('h1').on('click', () => {
-  alert('Cao drugari');
+  alert('Cao Drugari?');
 });

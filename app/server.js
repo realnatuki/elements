@@ -1,36 +1,22 @@
 const express = require('express');
-
+const liveReload = require('../_modulr/livereload');
 // -- REQUIRE CONFIG FILES
-const config = require('./config');
+const config = require('../config');
 const { views, static, port } = config;
 
-// -- LIVE RELOAD + SERVER
-const livereload = require('livereload');
-const connectLiveReload = require('connect-livereload');
+// -- INIT EXPRESS
+const app = express();
 
-const liveReloadServer = livereload.createServer();
-liveReloadServer.watch(static);
-
-// notify browser about changes
-liveReloadServer.server.once('connection', () => {
-  setTimeout(() => {
-    liveReloadServer.refresh('/');
-  }, 100);
-});
+// -- LIVE RELOAD
+liveReload(static, app);
 
 // -- REQUIRE SERVICES
 
 // extract and pass to router
 // const user = new User('./app/data/user.json');
 
-// -- INIT EXPRESS
-const app = express();
-
-// -- LIVE RELOAD MIDDLEWARE
-app.use(connectLiveReload());
-
 // -- REQUIRE ROUTING defaults to index.js
-const routes = require('./app/routes');
+const routes = require('./routes');
 
 // -- SET TEMPLATE ENGINE
 app.set('view engine', 'ejs');
