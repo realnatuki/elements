@@ -1,7 +1,7 @@
 const express = require('express');
-const liveReload = require('../_modulr/livereload');
+const liveReload = require('./_modulr/livereload');
 // -- REQUIRE CONFIG FILES
-const config = require('../config');
+const config = require('./config');
 const { views, static, port } = config;
 
 // -- INIT EXPRESS
@@ -16,7 +16,7 @@ liveReload(static, app);
 // const user = new User('./app/data/user.json');
 
 // -- REQUIRE ROUTING defaults to index.js
-const routes = require('./routes');
+const routes = require('./app/routes');
 
 // -- SET TEMPLATE ENGINE
 app.set('view engine', 'ejs');
@@ -35,6 +35,6 @@ app.locals.siteName = 'Modulr Css Framework';
 app.use('/', routes());
 
 // -- START SERVER
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`App is listening on port: ${port}`);
 });

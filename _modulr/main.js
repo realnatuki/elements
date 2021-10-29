@@ -1,4 +1,4 @@
-import './styles/main.css';
+import './scss/main.scss';
 import './js/alan';
 // $('h1')
 //   .css('background', 'blue')

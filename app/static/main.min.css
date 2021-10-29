@@ -1,10 +1,38 @@
-/*!***************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./_modulr/styles/main.css ***!
-  \***************************************************************************/
-body {
-  background-color: tan;
-  color: black;
+/*!***********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./_modulr/scss/main.scss ***!
+  \***********************************************************************************************************************************************************/
+:root {
+  --text: yellow;
 }
 
+body {
+  background-color: #000;
+  color: yellow;
+  color: var(--text);
+  font-size: 21px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100px;
+  color: red;
+}
+
+button {
+  font-size: 1.5em;
+  color: red;
+}
 
 /*# sourceMappingURL=main.min.css.map*/
