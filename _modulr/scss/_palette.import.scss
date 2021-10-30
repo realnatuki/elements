@@ -1,0 +1,14 @@
+@forward 'palette' hide $amber-palette, $blue-palette, $blue-gray-palette,
+  $blue-grey-palette, $brown-palette, $cyan-palette,
+  $dark-theme-background-palette, $dark-theme-foreground-palette,
+  $deep-orange-palette, $deep-purple-palette, $gray-palette, $green-palette,
+  $grey-palette, $indigo-palette, $light-blue-palette, $light-green-palette,
+  $light-theme-background-palette, $light-theme-foreground-palette,
+  $lime-palette, $orange-palette, $pink-palette, $purple-palette, $red-palette,
+  $teal-palette, $yellow-palette;
+@forward 'palette' as mod-* hide $mod-black-12-opacity, $mod-black-6-opacity,
+  $mod-black-87-opacity, $mod-dark-disabled-text, $mod-dark-dividers,
+  $mod-dark-focused, $mod-dark-primary-text, $mod-dark-secondary-text,
+  $mod-light-disabled-text, $mod-light-dividers, $mod-light-focused,
+  $mod-light-primary-text, $mod-light-secondary-text, $mod-white-12-opacity,
+  $mod-white-6-opacity, $mod-white-87-opacity;

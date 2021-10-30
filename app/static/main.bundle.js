@@ -7,9 +7,11 @@
   \****************************/
 /***/ (function() {
 
-$('h1').on('click', function () {
-  alert('Cao Drugari');
-});
+var d = '<div>Hello Appended</div>';
+$('h1').css({
+  background: 'orange',
+  color: 'black'
+}).append("Appended this div with: ".concat(d));
 
 /***/ }),
 

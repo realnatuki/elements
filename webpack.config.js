@@ -2,12 +2,12 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 let mode = 'development';
 
 if (process.env.NODE_ENV === 'production') {
   mode = 'production';
 }
-console.log(mode);
 module.exports = {
   mode: mode,
   entry: {
@@ -17,6 +17,8 @@ module.exports = {
   output: {
     filename: 'main.bundle.js',
     path: path.resolve(__dirname, 'app/static'),
+    // this places all images processed in an image folder
+    assetModuleFilename: 'images/[hash][ext][query]',
     // clean: true,
   },
   module: {
@@ -32,11 +34,20 @@ module.exports = {
         // reads lef to right
         test: /\.(s[ac]|c)ss$/i,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '',
+            },
+          },
           'css-loader',
           'postcss-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource',
       },
     ],
   },
@@ -45,6 +56,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'main.min.css',
     }),
+    // new HtmlWebpackPlugin()
   ],
   optimization: {
     // This will enable CSS optimization only in production mode.
