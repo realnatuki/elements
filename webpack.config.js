@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 let mode = 'development';
 
 if (process.env.NODE_ENV === 'production') {
@@ -19,7 +20,7 @@ module.exports = {
     path: path.resolve(__dirname, 'app/static'),
     // this places all images processed in an image folder
     assetModuleFilename: 'images/[hash][ext][query]',
-    // clean: true,
+    clean: true,
   },
   module: {
     rules: [
@@ -53,6 +54,7 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'main.min.css',
     }),

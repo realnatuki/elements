@@ -1,15 +1,12 @@
-@use 'reset';
-@use 'layout';
-header {
-  background: url('../images/swc-banner.jpeg');
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-}
-ul {
-  list-style-image: url('../images/sword.svg');
-  list-style-type: circle;
-}
-.p16 [class^='col-'] {
-  padding: 16px;
+// @use 'reset';
+// @use 'layout';
+// @use 'loader';
+@use 'palette' as c;
+@use 'sass:map';
+
+@use 'typography' as typo;
+
+body {
+  font-size: typo.$font-size;
+  color: map.get(c.$teal-palette, 800);
 }

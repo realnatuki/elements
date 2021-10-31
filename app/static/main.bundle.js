@@ -1,17 +1,16 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./_modulr/js/alan.js":
-/*!****************************!*\
-  !*** ./_modulr/js/alan.js ***!
-  \****************************/
+/***/ "./_modulr/js/template.js":
+/*!********************************!*\
+  !*** ./_modulr/js/template.js ***!
+  \********************************/
 /***/ (function() {
 
-var d = '<div>Hello Appended</div>';
-$('h1').css({
-  background: 'orange',
-  color: 'black'
-}).append("Appended this div with: ".concat(d));
+$(function () {});
+window.addEventListener('load', function () {
+  $('.loader').addClass('hidden');
+});
 
 /***/ }),
 
@@ -105,46 +104,10 @@ var __webpack_exports__ = {};
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/main.scss */ "./_modulr/scss/main.scss");
-/* harmony import */ var _js_alan__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/alan */ "./_modulr/js/alan.js");
-/* harmony import */ var _js_alan__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_alan__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _js_template_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/template.js */ "./_modulr/js/template.js");
+/* harmony import */ var _js_template_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_js_template_js__WEBPACK_IMPORTED_MODULE_1__);
 
- // $('h1')
-//   .css('background', 'blue')
-//   .width('300px')
-//   .on('mouseenter', (evt) => {
-//     $(evt.currentTarget).animate(
-//       {
-//         width: '500px',
-//       },
-//       {
-//         duration: 300,
-//         specialEasing: {
-//           width: 'linear',
-//           height: 'easeOutBounce',
-//         },
-//         complete: () => {
-//           $(evt.currentTarget).text('another text');
-//         },
-//       }
-//     );
-//   })
-//   .on('mouseleave', (evt) => {
-//     $(evt.currentTarget).animate({
-//       width: '300px',
-//     });
-//   });
 
-var h1 = $('h1');
-var text = $('h1').text();
-h1.on({
-  mouseenter: function mouseenter(evt) {
-    $(evt.currentTarget).text('hello world');
-  },
-  mouseleave: function mouseleave(evt) {
-    $(evt.currentTarget).text(text);
-  }
-});
-$('#datepicker').datepicker();
 }();
 /******/ })()
 ;
